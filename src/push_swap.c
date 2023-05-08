@@ -6,12 +6,13 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/17 14:46:51 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/04/18 17:10:00 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/08 17:11:14 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void list_print(t_list *list)
+
+void	list_print(t_list *list)
 {
 	while (list != NULL)
 	{
@@ -31,7 +32,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	// if (argc == 0)
 	// 	return (error);
-	// //parsing
+	// //TODO: parse to int
 	i = 1;
 	while (i < argc)
 	{
@@ -46,7 +47,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 
-	//functions for all operations
+	//functions for all operations DONE
 	list_print(stack_a);
 	// printf("argc: %i\n", argc);
 }
