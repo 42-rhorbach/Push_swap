@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/18 15:15:16 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 12:42:30 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/22 15:26:01 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ int		ps_lstsize(t_ilist *lst);
 
 t_error	pre_sort(t_ilist *list, int list_length);
 void	radix_sort(t_ilist **stack_a, t_ilist **stack_b, int list_length);
+
+void	sort_2(t_ilist **stack_a, t_ilist **stack_b);
+void	sort_3(t_ilist **stack_a, t_ilist **stack_b);
+void	sort_4(t_ilist **stack_a, t_ilist **stack_b);
+void	sort_5(t_ilist **stack_a, t_ilist **stack_b);
 
 void	list_print(t_ilist *list); //temp
 void	print_stacks(t_ilist *stack_a, t_ilist *stack_b); //temp

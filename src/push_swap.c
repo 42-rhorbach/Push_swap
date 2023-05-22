@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/17 14:46:51 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 12:57:48 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/22 15:32:11 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,22 @@ bool	ps_atoi(const char *str, int *result_ptr)
 	return (str[i] == '\0');
 }
 
+void	sort(t_ilist **stack_a, t_ilist **stack_b, int list_len)
+{
+	if (list_len <= 1)
+		return ;
+	else if (list_len == 2)
+		sort_2(stack_a, stack_b);
+	else if (list_len == 3)
+		sort_3(stack_a, stack_b);
+	else if (list_len == 4)
+		sort_4(stack_a, stack_b);
+	else if (list_len == 5)
+		sort_5(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b, list_len);
+}
+
 t_error	push_swap(char **input, int len)
 {
 	int		i;
@@ -155,10 +171,12 @@ t_error	push_swap(char **input, int len)
 		ps_lstclear(&stack_b);
 		return (get_error());
 	}
-	radix_sort(&stack_a, &stack_b, len);
+	sort(&stack_a, &stack_b, len);
+	print_stacks(stack_a, stack_b);
 
-	//TODO: check for dupe values in list
-	//TODO: make brute sort
+
+//	TODO: print operations
+
 	ps_lstclear(&stack_a);
 	ps_lstclear(&stack_b);
 	return (EXIT_SUCCESS);
