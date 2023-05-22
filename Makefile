@@ -6,7 +6,7 @@
 #    By: rhorbach <rhorbach@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 12:49:02 by rhorbach      #+#    #+#                  #
-#    Updated: 2023/05/22 12:02:42 by rhorbach      ########   odam.nl          #
+#    Updated: 2023/05/22 13:09:45 by rhorbach      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,11 @@ NORMFLAGS = -Wall -Wextra -Werror $(if $(DEBUG),-g -fsanitize=address)
 INCLUDES = $(addprefix -I, $(sort $(dir $(HEADERFILES))))
 OBJDIR = obj
 FILES = \
+	src/error.c						\
+	src/operations.c				\
+	src/pre_sort.c					\
 	src/push_swap.c					\
 	src/radix_sort.c				\
-	src/pre_sort.c					\
-	src/operations.c				\
 	src/i_list/ps_lstadd_back.c		\
 	src/i_list/ps_lstadd_front.c	\
 	src/i_list/ps_lstclear.c		\

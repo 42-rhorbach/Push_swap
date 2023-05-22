@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/17 14:46:51 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 12:48:47 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/22 12:57:48 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,20 +138,29 @@ t_error	push_swap(char **input, int len)
 		if (!parsed_num)
 		{
 			ps_lstclear(&stack_a);
+			ps_lstclear(&stack_b);
 			return (set_error(E_PARSE));
 		}
 		if (ps_lstnew_back(&stack_a, result_ptr) == NULL)
 		{
 			ps_lstclear(&stack_a);
+			ps_lstclear(&stack_b);
 			return (set_error(E_MALLOC));
 		}
 		i++;
 	}
-	pre_sort(stack_a, len);
+	if (pre_sort(stack_a, len) != OK)
+	{
+		ps_lstclear(&stack_a);
+		ps_lstclear(&stack_b);
+		return (get_error());
+	}
 	radix_sort(&stack_a, &stack_b, len);
 
 	//TODO: check for dupe values in list
 	//TODO: make brute sort
+	ps_lstclear(&stack_a);
+	ps_lstclear(&stack_b);
 	return (EXIT_SUCCESS);
 }
 
