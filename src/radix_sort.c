@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/10 17:42:08 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 12:36:49 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/22 16:05:01 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,13 @@ void	radix_sort(t_ilist **stack_a, t_ilist **stack_b, int list_length)
 		while ((*stack_a) != NULL && i < list_length)
 		{
 			if (((*stack_a)->minimized_value & (1 << shift)) == 0)
-			{
 				pb(stack_a, stack_b);
-			}
 			else
-			{
 				ra(stack_a, stack_b);
-			}
 			i++;
 		}
-		print_stacks(*stack_a, *stack_b);
 		while ((*stack_b) != NULL)
-		{
 			pa(stack_a, stack_b);
-		}
-		print_stacks(*stack_a, *stack_b);
 		shift++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/18 14:43:05 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 12:37:59 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/22 16:03:55 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,62 +85,73 @@ void	sa(t_ilist **stack_a, t_ilist **stack_b)
 {
 	(void)stack_b;
 	swap(stack_a);
+	ft_putendl_fd("sa", STDOUT_FILENO);
 }
 
 void	sb(t_ilist **stack_a, t_ilist **stack_b)
 {
 	(void)stack_a;
 	swap(stack_b);
+	ft_putendl_fd("sb", STDOUT_FILENO);
 }
 
 void	ss(t_ilist **stack_a, t_ilist **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
+	ft_putendl_fd("ss", STDOUT_FILENO);
 }
 
 void	pa(t_ilist **stack_a, t_ilist **stack_b)
 {
 	push(stack_a, stack_b);
+	ft_putendl_fd("pa", STDOUT_FILENO);
 }
 
 void	pb(t_ilist **stack_a, t_ilist **stack_b)
 {
 	push(stack_b, stack_a);
+	ft_putendl_fd("pb", STDOUT_FILENO);
 }
 
 void	ra(t_ilist **stack_a, t_ilist **stack_b)
 {
 	(void)stack_b;
 	rotate(stack_a);
+	ft_putendl_fd("ra", STDOUT_FILENO);
 }
 
 void	rb(t_ilist **stack_a, t_ilist **stack_b)
 {
 	(void)stack_a;
 	rotate(stack_b);
+	ft_putendl_fd("rb", STDOUT_FILENO);
 }
 
 void	rr(t_ilist **stack_a, t_ilist **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
+	ft_putendl_fd("rr", STDOUT_FILENO);
 }
 
 void	rra(t_ilist **stack_a, t_ilist **stack_b)
 {
 	(void)stack_b;
 	reverse_rotate(stack_a);
+	ft_putendl_fd("rra", STDOUT_FILENO);
 }
 
 void	rrb(t_ilist **stack_a, t_ilist **stack_b)
 {
 	(void)stack_a;
 	reverse_rotate(stack_b);
+	ft_putendl_fd("rrb", STDOUT_FILENO);
 }
 
 void	rrr(t_ilist **stack_a, t_ilist **stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
+	ft_putendl_fd("rrr", STDOUT_FILENO);
 }
