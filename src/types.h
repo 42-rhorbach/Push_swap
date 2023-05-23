@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ps_lstnew_back.c                                   :+:    :+:            */
+/*   types.h                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/05/11 13:13:29 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/23 12:40:14 by rhorbach      ########   odam.nl         */
+/*   Created: 2023/05/23 12:29:41 by rhorbach      #+#    #+#                 */
+/*   Updated: 2023/05/23 12:29:48 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stddef.h>
+#ifndef TYPES_H
+# define TYPES_H
 
-t_ilist	*ps_lstnew_back(t_ilist **lst, int value)
+typedef struct s_ilist
 {
-	t_ilist	*new;
+	int				value;
+	unsigned int	minimized_value;
+	struct s_ilist	*next;
+}					t_ilist;
 
-	new = ps_lstnew(value);
-	if (new == NULL)
-		return (NULL);
-	ps_lstadd_back(lst, new);
-	return (new);
-}
+typedef enum e_error
+{
+	OK,
+	E_PARSE,
+	E_DUPE,
+	E_MALLOC,
+}	t_error;
+
+#endif

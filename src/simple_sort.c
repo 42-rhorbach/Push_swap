@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/22 13:21:41 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 15:21:09 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/23 13:17:41 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	sort_3(t_ilist **stack_a, t_ilist **stack_b)
 		rra(stack_a, stack_b);
 		sa(stack_a, stack_b);
 	}
-	if (a < b && b < c)
+	if (b < a && a < c)
 		sa(stack_a, stack_b);
 	if (c < a && a < b)
 		rra(stack_a, stack_b);
@@ -95,16 +95,11 @@ void	sort_4(t_ilist **stack_a, t_ilist **stack_b)
 		rra(stack_a, stack_b);
 	pa(stack_a, stack_b);
 	if (b < a && a < c)
-	{
 		sa(stack_a, stack_b);
-		return ;
-	}
-	ra(stack_a, stack_b);
-	if (c < a && a < d)
-	{
+	if (c < a)
 		ra(stack_a, stack_b);
-		return ;
-	}
+	if (c < a && a < d)
+		ra(stack_a, stack_b);
 }
 
 // 1 0 // pa
@@ -146,7 +141,7 @@ void	sort_5(t_ilist **stack_a, t_ilist **stack_b)
 		sa(stack_a, stack_b);
 	if (c < a && a < d)
 		rra(stack_a, stack_b);
-	if (d < a && e < a)
+	if (d < a)
 		ra(stack_a, stack_b);
 	if (d < a && a < e)
 		ra(stack_a, stack_b);

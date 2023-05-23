@@ -6,18 +6,17 @@
 #    By: rhorbach <rhorbach@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 12:49:02 by rhorbach      #+#    #+#                  #
-#    Updated: 2023/05/22 15:26:14 by rhorbach      ########   odam.nl          #
+#    Updated: 2023/05/23 12:35:06 by rhorbach      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-HEADERFILES = src/push_swap.h
+HEADERFILES = src/push_swap.h src/operations/operations.h src/types.h
 NORMFLAGS = -Wall -Wextra -Werror $(if $(DEBUG),-g -fsanitize=address)
 INCLUDES = $(addprefix -I, $(sort $(dir $(HEADERFILES))))
 OBJDIR = obj
 FILES = \
 	src/error.c						\
-	src/operations.c				\
 	src/pre_sort.c					\
 	src/push_swap.c					\
 	src/radix_sort.c				\
@@ -29,7 +28,11 @@ FILES = \
 	src/i_list/ps_lstnew.c			\
 	src/i_list/ps_lstnew_back.c		\
 	src/i_list/ps_lstnew_front.c	\
-	src/i_list/ps_lstsize.c
+	src/i_list/ps_lstsize.c			\
+	src/operations/push.c			\
+	src/operations/reverse_rotate.c	\
+	src/operations/rotate.c			\
+	src/operations/swap.c
 
 OBJFILES = $(addprefix $(OBJDIR)/,$(FILES:c=o))
 

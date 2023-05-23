@@ -6,11 +6,12 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/27 12:23:20 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/17 16:46:11 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/23 12:40:05 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 t_ilist	*ps_lstnew(int value)
 {

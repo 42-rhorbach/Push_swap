@@ -6,11 +6,12 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 17:35:47 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 13:10:58 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/23 12:35:22 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 void	bubble_sort(t_ilist **list_array, int list_length)
 {

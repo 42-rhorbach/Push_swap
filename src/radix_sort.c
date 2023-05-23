@@ -6,11 +6,12 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/10 17:42:08 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 16:05:01 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/23 12:44:06 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stddef.h>
 
 void	radix_sort(t_ilist **stack_a, t_ilist **stack_b, int list_length)
 {
@@ -35,21 +36,20 @@ void	radix_sort(t_ilist **stack_a, t_ilist **stack_b, int list_length)
 	}
 }
 
-	// (getal & 0b00001) == 1 | 0
-	// (getal & (0b00001 << 1)) == 2 | 0
-	// (getal & 0b00100) == 4 | 0
+// (getal & 0b00001) == 1 | 0
+// (getal & (0b00001 << 1)) == 2 | 0
+// (getal & 0b00100) == 4 | 0
 
-	// (getal & 0b00001) >> 0 == 1 | 0
-	// (getal & 0b00010) >> 1 == 1 | 0
-	// (getal & 0b00100) >> 2 == 1 | 0
+// (getal & 0b00001) >> 0 == 1 | 0
+// (getal & 0b00010) >> 1 == 1 | 0
+// (getal & 0b00100) >> 2 == 1 | 0
 
+// (getal) % 2 == 0 | 1
+// (getal / 2) % 2 == 0 | 1
+// (getal / 2 / 2) % 2 == 0 | 1
+// (getal / 2 / 2 / 2) % 2 == 0 | 1
 
-	// (getal) % 2 == 0 | 1
-	// (getal / 2) % 2 == 0 | 1
-	// (getal / 2 / 2) % 2 == 0 | 1
-	// (getal / 2 / 2 / 2) % 2 == 0 | 1
-
-	// (getal) % 3 == 0 | 1 | 2
-	// (getal / 3) % 3 == 0 | 1 | 2
-	// (getal / 3 / 3) % 3 == 0 | 1 | 2
-	// (getal / 3 / 3 / 3) % 3 == 0 | 1 | 2
+// (getal) % 3 == 0 | 1 | 2
+// (getal / 3) % 3 == 0 | 1 | 2
+// (getal / 3 / 3) % 3 == 0 | 1 | 2
+// (getal / 3 / 3 / 3) % 3 == 0 | 1 | 2

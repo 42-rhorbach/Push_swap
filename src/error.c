@@ -6,11 +6,12 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/22 12:26:02 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/22 12:42:51 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/23 12:43:04 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft.h"
 
 static t_error	*get_error_ptr(void)
 {
@@ -42,7 +43,6 @@ void	print_error(t_error err)
 	[E_PARSE] = "Failed to parse integer.",
 	[E_DUPE] = "No duplicates allowed.",
 	[E_MALLOC] = "Failed to allocate memory."
-
 	};
 
 	ft_putstr_fd("push_swap: ", STDERR_FILENO);
