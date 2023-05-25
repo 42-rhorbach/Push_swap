@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/17 14:46:51 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/23 14:34:15 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/25 16:23:33 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-//DONE? make atoi with max & min int guards, no spaces, empty string checks
-// TODO: check thoroughly
 bool	ps_atoi(const char *str, int *result_ptr)
 {
 	int		i;

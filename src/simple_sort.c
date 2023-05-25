@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/22 13:21:41 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/23 13:17:41 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/25 16:26:46 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,6 @@ void	sort_3(t_ilist **stack_a, t_ilist **stack_b)
 // 2 // sa ra / ra sa
 // 1
 // 0
-
-/*
-if ((c < b && b < a) || (b < c && c < a))
-	ra;
-if ((c < a && a < b) || (a < c && c < b))
-	rra;
-if ((a < c && c < b) || (a < b && b < c) || (c < b && b < a))
-	sa;
-*/
 
 void	sort_4(t_ilist **stack_a, t_ilist **stack_b)
 {
@@ -171,44 +162,3 @@ void	sort_5(t_ilist **stack_a, t_ilist **stack_b)
 // 1
 // 2
 // 3
-
-/*
-
-
-	if (a < b)
-		pa; return ;
-	if (b < a && a < d)
-	{
-		if (c < a)
-			ra;
-		pa; sa;
-		if (c < a)
-			rra;
-		return;
-	}
-	if (d < a)
-	{
-		if (a < e)
-			rra;
-		pa; ra;
-		if (a < e)
-			ra;
-		return;
-	}
-
-
-
-	if (c < a && a < d)
-		ra;
-	if (d < a && a < e)
-		rra;
-	pa;
-	if (b < a && a < d)
-		sa;
-	if (c < a && a < d)
-		rra;
-	if (d < a)
-		ra;
-	if (d < a && a < e)
-		ra;
-*/
