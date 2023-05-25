@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/22 12:26:02 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/23 12:43:04 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/23 14:54:40 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,18 @@ t_error	get_error(void)
 
 void	print_error(t_error err)
 {
-	static const char	*error_table[] = {
-	[E_PARSE] = "Failed to parse integer.",
-	[E_DUPE] = "No duplicates allowed.",
-	[E_MALLOC] = "Failed to allocate memory."
-	};
-
-	ft_putstr_fd("push_swap: ", STDERR_FILENO);
-	ft_putendl_fd((char *)error_table[err], STDERR_FILENO);
+	(void)err;
+	ft_putendl_fd("Error", STDERR_FILENO);
 }
+
+// void	print_error(t_error err)
+// {
+// 	static const char	*error_table[] = {
+// 	[E_PARSE] = "Failed to parse integer.",
+// 	[E_DUPE] = "No duplicates allowed.",
+// 	[E_MALLOC] = "Failed to allocate memory."
+// 	};
+
+// 	ft_putstr_fd("push_swap: ", STDERR_FILENO);
+// 	ft_putendl_fd((char *)error_table[err], STDERR_FILENO);
+// }

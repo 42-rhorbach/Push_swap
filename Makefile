@@ -6,7 +6,7 @@
 #    By: rhorbach <rhorbach@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 12:49:02 by rhorbach      #+#    #+#                  #
-#    Updated: 2023/05/23 12:35:06 by rhorbach      ########   odam.nl          #
+#    Updated: 2023/05/25 12:38:53 by rhorbach      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ endef
 all: $(NAME)
 
 $(NAME): $(OBJFILES) $(LIBFT)
-	$(CC) $(NORMFLAGS) $(INCLUDES) $(LIBFLAGS) $(OBJFILES) -o $(NAME)
+	$(CC) $(NORMFLAGS) $(INCLUDES) $(OBJFILES) $(LIBFLAGS) -o $(NAME)
 
 $(LIBFT):
 	@$(MAKE) -C $(dir $(LIBFT))
