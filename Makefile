@@ -6,7 +6,7 @@
 #    By: rhorbach <rhorbach@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/14 12:49:02 by rhorbach      #+#    #+#                  #
-#    Updated: 2023/05/25 13:16:50 by rhorbach      ########   odam.nl          #
+#    Updated: 2023/05/30 13:22:17 by rhorbach      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ FILES = \
 	src/push_swap.c					\
 	src/radix_sort.c				\
 	src/simple_sort.c				\
+	src/i_list/ps_is_lst_sorted.c	\
 	src/i_list/ps_lstadd_back.c		\
 	src/i_list/ps_lstadd_front.c	\
 	src/i_list/ps_lstclear.c		\

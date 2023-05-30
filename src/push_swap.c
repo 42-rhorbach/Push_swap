@@ -6,13 +6,13 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/17 14:46:51 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/25 16:23:33 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/30 13:25:39 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-#include <stddef.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -69,7 +69,8 @@ t_error	push_swap(char **input, int len)
 		ps_lstclear(&stack_b);
 		return (get_error());
 	}
-	sort(&stack_a, &stack_b, len);
+	if (!ps_is_lst_sorted(stack_a))
+		sort(&stack_a, &stack_b, len);
 	ps_lstclear(&stack_a);
 	ps_lstclear(&stack_b);
 	return (OK);

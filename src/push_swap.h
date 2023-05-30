@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/18 15:15:16 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/05/23 12:38:46 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/05/30 13:25:02 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include "operations.h"
 # include "types.h"
+# include <stdbool.h>
 
 t_error	set_error(t_error err);
 t_error	get_error(void);
 void	print_error(t_error err);
 
+bool	ps_is_lst_sorted(t_ilist *lst);
 void	ps_lstadd_front(t_ilist **lst, t_ilist *new);
 void	ps_lstadd_back(t_ilist **lst, t_ilist *new);
 void	ps_lstclear(t_ilist **lst);
