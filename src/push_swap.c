@@ -17,34 +17,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool	ps_atoi(const char *str, int *result_ptr)
-{
-	int		i;
-	int		sign;
-	long	c;
-
-	sign = -1;
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = 1;
-		i++;
-	}
-	if (!ft_isdigit(str[i]))
-		return (false);
-	c = 0;
-	while (ft_isdigit(str[i]))
-	{
-		c = ((c * 10) - (str[i] - '0'));
-		if (c * sign < -2147483648 || c * sign > 2147483647)
-			return (false);
-		i++;
-	}
-	*result_ptr = c * sign;
-	return (str[i] == '\0');
-}
-
 void	sort(t_ilist **stack_a, t_ilist **stack_b, int list_len)
 {
 	if (list_len <= 1)
@@ -70,7 +42,7 @@ t_error	list_init(char **input, int len, t_ilist **stack_a)
 	i = 0;
 	while (i < len)
 	{
-		parsed_num = ps_atoi(input[i], &result_ptr);
+		parsed_num = ft_satoi(input[i], &result_ptr);
 		if (!parsed_num)
 			return (set_error(E_PARSE));
 		if (ps_lstnew_back(stack_a, result_ptr) == NULL)
